@@ -1,5 +1,5 @@
 {
-  "extends": ["astro/tsconfigs/strict", "@tsconfig/strictest"],
+  "extends": ["astro/tsconfigs/strict", "@vue/tsconfig/tsconfig.dom.json", "@tsconfig/strictest"],
   "include": [".astro/types.d.ts", "**/*"],
   "exclude": ["dist"],
   "compilerOptions": {
@@ -9,6 +9,7 @@
       {
         "name": "@astrojs/ts-plugin"
       }
-    ]
+    ],
+    "jsx": "preserve"
   }
 }
