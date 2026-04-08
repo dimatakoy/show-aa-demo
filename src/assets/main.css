@@ -1,0 +1,21 @@
+@import url('./reset.css');
+
+:root {
+	--spacing-unit: 0.25rem; /* 4px */
+
+	--spacing-0: 0;
+	--spacing-1: calc(var(--spacing-unit) * 1); /* 0.25rem → 4px */
+	--spacing-2: calc(var(--spacing-unit) * 2); /* 0.5rem  → 8px */
+	--spacing-3: calc(var(--spacing-unit) * 3); /* 0.75rem → 12px */
+	--spacing-4: calc(var(--spacing-unit) * 4); /* 1rem    → 16px */
+	--spacing-5: calc(var(--spacing-unit) * 5); /* 1.25rem → 20px */
+	--spacing-6: calc(var(--spacing-unit) * 6); /* 1.5rem  → 24px */
+	--spacing-7: calc(var(--spacing-unit) * 8); /* 2rem    → 32px */
+	--spacing-8: calc(var(--spacing-unit) * 10); /* 2.5rem  → 40px */
+	--spacing-9: calc(var(--spacing-unit) * 12); /* 3rem    → 48px */
+	--spacing-10: calc(var(--spacing-unit) * 16); /* 4rem    → 64px */
+	--spacing-11: calc(var(--spacing-unit) * 20); /* 5rem    → 80px */
+	--spacing-12: calc(var(--spacing-unit) * 24); /* 6rem    → 96px */
+
+	--page-container-padding-inline: max(var(--spacing-4), 50vw - 600px);
+}
