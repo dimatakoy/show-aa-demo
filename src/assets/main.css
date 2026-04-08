@@ -18,4 +18,6 @@
 	--spacing-12: calc(var(--spacing-unit) * 24); /* 6rem    → 96px */
 
 	--page-container-padding-inline: max(var(--spacing-4), 50vw - 600px);
+
+	font-family: 'Gordita', sans-serif;
 }
