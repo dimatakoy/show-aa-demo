@@ -7,7 +7,7 @@ import { PRODUCTS } from '../shared/constants';
 
 <Layout>
 	<div>
-		<VHeader />
-		<ProductCatalog client:load products={PRODUCTS} />
+		<VHeader client:only />
+		<ProductCatalog client:only products={PRODUCTS} />
 	</div>
 </Layout>

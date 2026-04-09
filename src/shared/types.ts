@@ -15,12 +15,3 @@ export type Product = {
 	description: string;
 	colorVariants: ProductColorVariant[];
 };
-
-export type CartItem = {
-	variantId: ProductColorVariant['productSku'];
-	quantity: number;
-};
-
-export type Cart = {
-	items: CartItem[];
-};

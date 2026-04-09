@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import LogoImage from '../assets/logo.svg';
+import { useCart } from '../shared/cart';
+
+const cart = useCart();
 </script>
 
 <template>
@@ -13,7 +16,7 @@ import LogoImage from '../assets/logo.svg';
 				alt="Inakono Store." />
 		</a>
 
-		<a href="/cart">Корзина</a>
+		<a href="/cart">Cart ({{ cart.totalItems }})</a>
 	</header>
 </template>
 

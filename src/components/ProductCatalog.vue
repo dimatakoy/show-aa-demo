@@ -1,10 +1,9 @@
 <script setup lang="ts">
+import { useCart } from '../shared/cart';
 import { PRODUCTS } from '../shared/constants';
 import ProductCard from './ProductCard.vue';
 
-const handleAddToCart = (variantId: string | number) => {
-	console.log('Parent received variant for cart:', variantId);
-};
+const cart = useCart();
 </script>
 
 <template>
@@ -13,12 +12,18 @@ const handleAddToCart = (variantId: string | number) => {
 
 		<ul class="product-section__grid" aria-label="Product list">
 			<li v-for="product in PRODUCTS" :key="product.id">
-				<ProductCard :product="product" @added-to-cart="handleAddToCart" :is-added="true" />
+				<ProductCard
+					:product="product"
+					@add-to-cart="cart.addItem($event, 1)"
+					:is-added="false" />
 			</li>
 		</ul>
 
 		<div class="product-section__extra">
-			<ProductCard :product="PRODUCTS[0]" @added-to-cart="handleAddToCart" :is-added="true" />
+			<ProductCard
+				:product="PRODUCTS[0]!"
+				@added-to-cart="cart.addItem($event, 1)"
+				:is-added="false" />
 		</div>
 	</section>
 </template>
