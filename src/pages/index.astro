@@ -1,16 +1,13 @@
 ---
-import ProductCard from '../components/ProductCard.vue';
 import ProductCatalog from '../components/ProductCatalog.vue';
 import VHeader from '../components/VHeader.vue';
 import Layout from '../layouts/Layout.astro';
+import { PRODUCTS } from '../shared/constants';
 ---
 
 <Layout>
 	<div>
 		<VHeader />
-
-		<ProductCatalog>
-			<ProductCard />
-		</ProductCatalog>
+		<ProductCatalog client:load products={PRODUCTS} />
 	</div>
 </Layout>

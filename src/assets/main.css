@@ -21,3 +21,14 @@
 
 	font-family: 'Gordita', sans-serif;
 }
+
+.sr-only {
+	position: absolute;
+	margin: -1px;
+	padding: 0;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	border-width: 0;
+	white-space: nowrap;
+}

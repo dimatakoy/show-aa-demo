@@ -1,15 +1,56 @@
+<script setup lang="ts">
+import { PRODUCTS } from '../shared/constants';
+import ProductCard from './ProductCard.vue';
+
+const handleAddToCart = (variantId: string | number) => {
+	console.log('Parent received variant for cart:', variantId);
+};
+</script>
+
 <template>
-	<main class="product-catalog">
-		<slot />
-	</main>
+	<section aria-labelledby="products-heading" class="product-section">
+		<h1 id="products-heading" class="product-section__title sr-only">Our products</h1>
+
+		<ul class="product-section__grid" aria-label="Product list">
+			<li v-for="product in PRODUCTS" :key="product.id">
+				<ProductCard :product="product" @added-to-cart="handleAddToCart" :is-added="true" />
+			</li>
+		</ul>
+
+		<div class="product-section__extra">
+			<ProductCard :product="PRODUCTS[0]" @added-to-cart="handleAddToCart" :is-added="true" />
+		</div>
+	</section>
 </template>
 
 <style lang="css">
-.product-catalog {
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	gap: 24px;
-
+.product-section {
+	margin: 0 auto;
 	padding-inline: var(--page-container-padding-inline);
+	padding-block: var(--spacing-5);
+
+	.product-section__title {
+		margin-bottom: 24px;
+		font-size: 32px;
+		font-family: 'Gordita', sans-serif;
+	}
+
+	.product-section__grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+		gap: 32px;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+
+		@media (max-width: 768px) {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 16px;
+		}
+	}
+
+	.product-section__extra {
+		margin-top: var(--spacing-10);
+	}
 }
 </style>
